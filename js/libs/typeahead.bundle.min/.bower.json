@@ -1,0 +1,13 @@
+{
+  "name": "typeahead.bundle.min",
+  "_cacheHeaders": {
+    "Last-Modified": "Thu, 21 Aug 2014 08:00:42 GMT",
+    "Content-Length": "29675",
+    "Content-Type": "application/javascript; charset=utf-8"
+  },
+  "main": "index.js",
+  "_source": "https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.min.js",
+  "_target": "*",
+  "_originalSource": "https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.min.js",
+  "_direct": true
+}

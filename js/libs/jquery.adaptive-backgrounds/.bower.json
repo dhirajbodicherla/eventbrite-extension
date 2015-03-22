@@ -1,0 +1,14 @@
+{
+  "name": "jquery.adaptive-backgrounds",
+  "_cacheHeaders": {
+    "ETag": "\"8df2c77c72e17cd88fcdb9631bc26273d389958b\"",
+    "Content-Length": "4932",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "_release": "e-tag:8df2c77c7",
+  "main": "index.js",
+  "_source": "https://raw.githubusercontent.com/briangonzalez/jquery.adaptive-backgrounds.js/master/src/jquery.adaptive-backgrounds.js",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/briangonzalez/jquery.adaptive-backgrounds.js/master/src/jquery.adaptive-backgrounds.js",
+  "_direct": true
+}
