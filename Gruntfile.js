@@ -125,6 +125,21 @@ module.exports = function(grunt) {
           }
         ]
       }
+    },
+
+    bumpup: {
+      files: ['package.json', 'bower.json', 'extension/manifest.json']
+    },
+
+    compress: {
+      main: {
+        options: {
+          archive: 'eventbrite-extension.zip'
+        },
+        files: [
+          {src: ['extension/**'], dest: '/'}
+        ]
+      }
     }
 
   });
@@ -133,6 +148,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-less');
   */
+  grunt.loadNpmTasks('grunt-bumpup');
+  grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -145,5 +162,16 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', ['processhtml:dev', 'copy:dev']);
   grunt.registerTask('test', ['react', 'concat:prod']);
   grunt.registerTask('prod', ['react', 'concat:prod', 'uglify', 'clean:prod', 'processhtml:prod']);
+  grunt.registerTask('release', function (type) {
+    grunt.task.run('react');
+    grunt.task.run('concat:prod');
+    grunt.task.run('uglify');
+    grunt.task.run('clean:prod');
+    grunt.task.run('processhtml:prod');
+    grunt.task.run('compress');
+    if(type)
+      grunt.task.run('bumpup:' + type);
+
+});
 
 };
