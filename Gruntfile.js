@@ -168,10 +168,10 @@ module.exports = function(grunt) {
     grunt.task.run('uglify');
     grunt.task.run('clean:prod');
     grunt.task.run('processhtml:prod');
-    grunt.task.run('compress');
     if(type)
       grunt.task.run('bumpup:' + type);
 
+    grunt.task.run('compress');
 });
 
 };

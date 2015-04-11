@@ -49,9 +49,17 @@
         var events = this.props.events.map(function(event){
           var startDate = moment(event.start.local).format(CONSTANTS.EVENT_DISPLAY_DATE_FORMAT); // converts the date to a beautiful format
           var endDate = moment(event.end.local).format(CONSTANTS.EVENT_DISPLAY_DATE_FORMAT);
-          var address = (event.venue.address.city != null) ? (event.venue.address.city + ',' + event.venue.address.region) : null;
-          var imageStyle = {
-            backgroundImage: 'url('+event.logo_url+')'
+          var address = [];
+          if(event.venue.address.city) address.push(event.venue.address.city);
+          if(event.venue.address.region) address.push(event.venue.address.region);
+          if(!event.hasOwnProperty("logo_url")){ /* For old apps so that they don't throw errors */
+            var imageStyle = {
+              backgroundImage: 'url('+((event.logo) ? event.logo.url : '' )+')'
+            };
+          }else{
+            var imageStyle = {
+              backgroundImage: 'url('+((event.logo_url) ? event.logo_url : '' )+')'
+            };
           }
           return React.createElement("li", {key: event.id, className: "event-container"}, 
             React.createElement("a", {href: event.url, onClick: this.handleClick}, 
@@ -61,7 +69,7 @@
                   React.createElement("span", {className: "title"}, event.name.text), 
                   React.createElement("span", {className: "organizer"}, event.organizer.name), 
                   React.createElement("span", {className: "date"}, startDate), 
-                  (address != null) ? (React.createElement("span", {className: "address"}, address)) : ''
+                   (address.length > 0 ) ? (React.createElement("span", {className: "address"}, address.join(", "))) : ''
                 )
               )
             )
@@ -129,7 +137,7 @@
                 'end': evt.end,
                 'url': evt.url,
                 'venue': evt.venue,
-                'logo_url': evt.logo_url,
+                'logo': evt.logo,
                 'name': evt.name,
                 'organizer': evt.organizer
               };
