@@ -8,10 +8,10 @@ Download the chrome extension from [https://chrome.google.com/webstore/detail/ev
 
 ## Features
 
-* Search for amazing event around you
+* Uses Eventbrite's public API to search for amazing event around you
 * The extension also shows events that are
-  * popular
-  * happening coming weekend
+  * Popular
+  * Happening coming weekend
 * Save your favorite events
 * Marathon
   * Search for all the events that you can possibly attend one after the other.

@@ -1,6 +1,6 @@
 {
   "name": "eventbrite-extension",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "An extension to find nearest event around",
   "main": "index.js",
   "scripts": {
