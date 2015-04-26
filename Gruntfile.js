@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         src: ['extension/js/libs/jquery/dist/jquery.min.js',
               'extension/js/libs/moment/min/moment.min.js',
               'extension/js/libs/typeahead.bundle.min/index.js',
-              'extension/js/libs/react/react.min.js'],
+              'extension/js/libs/react/react-with-addons.min.js'],
         dest: 'extension/js/vendors.js',
       },
     },
