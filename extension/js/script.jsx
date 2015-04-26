@@ -1,4 +1,4 @@
-// (function(){
+(function(){
 
   /**
    * Constant values to make life easier
@@ -440,4 +440,4 @@
     }
     React.render(<App {...localData} />, mountNode);
   });
-// })();
+})();
