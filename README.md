@@ -2,6 +2,8 @@
 
 Get to know about the exciting events happening around you. This extension is based on Eventbrite's public API. Eventbrite is a global marketplace for live experiences that allows people to find and create events in 190 countries.
 
+<a href="https://www.youtube.com/watch?v=MOCu6pUoo00" target="_blank">![Walkthrough](http://i.imgur.com/yiaD9P6.png)</a>
+
 ## Installation
 
 Download the chrome extension from [https://chrome.google.com/webstore/detail/eventbrite/hhclmcdcogggmcglbakeckakdikccfjn](https://chrome.google.com/webstore/detail/eventbrite/hhclmcdcogggmcglbakeckakdikccfjn)
