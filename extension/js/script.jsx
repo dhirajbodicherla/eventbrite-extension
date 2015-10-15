@@ -78,7 +78,6 @@
           var eventName = evt.name.text;
           // var evtOrganizerName = evt.organizer.name; // because of change in API
           var evtOrganizerName = '';
-          console.log(evt);
           // if(evt.venue.address.city) address.push(evt.venue.address.city);
           // if(evt.venue.address.region) address.push(evt.venue.address.region);
           if(!evt.hasOwnProperty("logo_url")){ /* For old apps so that they don't throw errors */
