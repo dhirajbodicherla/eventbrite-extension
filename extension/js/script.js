@@ -75,8 +75,12 @@
           var startDate = moment(evt.start.local).format(CONSTANTS.EVENT_DISPLAY_DATE_FORMAT); // converts the date to a beautiful format
           var endDate = moment(evt.end.local).format(CONSTANTS.EVENT_DISPLAY_DATE_FORMAT);
           var address = [];
-          if(evt.venue.address.city) address.push(evt.venue.address.city);
-          if(evt.venue.address.region) address.push(evt.venue.address.region);
+          var eventName = evt.name.text;
+          // var evtOrganizerName = evt.organizer.name; // because of change in API
+          var evtOrganizerName = '';
+          console.log(evt);
+          // if(evt.venue.address.city) address.push(evt.venue.address.city);
+          // if(evt.venue.address.region) address.push(evt.venue.address.region);
           if(!evt.hasOwnProperty("logo_url")){ /* For old apps so that they don't throw errors */
             var imageStyle = {
               backgroundImage: 'url('+((evt.logo) ? evt.logo.url : '' )+')'
@@ -92,9 +96,9 @@
               React.createElement("div", {className: "event"}, 
                 React.createElement("div", {className: "image", style: imageStyle, "data-adaptive-background": "1", "data-ab-css-background": "1"}), 
                 React.createElement("div", {className: "body"}, 
-                  React.createElement("span", {className: "title"}, evt.name.text), 
+                  React.createElement("span", {className: "title"}, eventName), 
                   React.createElement("span", {className: "like " + isLiked, onClick: this.handleLikeClick.bind(this, evt)}), 
-                  React.createElement("span", {className: "organizer"}, evt.organizer.name), 
+                  React.createElement("span", {className: "organizer"}, evtOrganizerName), 
                   React.createElement("span", {className: "date"}, startDate), 
                    (address.length > 0 ) ? (React.createElement("span", {className: "address"}, address.join(", "))) : ''
                 )
